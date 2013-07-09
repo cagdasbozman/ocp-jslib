@@ -4,7 +4,7 @@ ocp-jslib
 # Requirements
 
   * js_of_ocaml (development version)
-  * ocp-build (https://github.com/OCamlPro/ocp-jslib)
+  * ocp-build (development version)
 
 
 # Try it
