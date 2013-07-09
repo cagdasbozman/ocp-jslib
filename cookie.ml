@@ -1,3 +1,5 @@
+type key = string
+type value = string
 
 let get_cookie () =
   let reg1 = Regexp.regexp "; " in
