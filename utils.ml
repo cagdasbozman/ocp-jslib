@@ -1,11 +1,10 @@
+(* Aliases *)
 let doc = Dom_html.document
-
+let win = Dom_html.window
 let window = Dom_html.window
-
 let loc = Js.Unsafe.variable "location"
 
 let _s s = Js.string s
-
 let _f f = Js.wrap_callback f
 
 let get_element_by_id id =
@@ -29,9 +28,9 @@ let get_by_name id =
     List.hd (Dom.list_of_nodeList (doc##getElementsByTagName (Js.string id))) in
   Js.to_string div##innerHTML
 
-let read_from_input ?msg:(msg="") ?default:(default="") =
+let read_from_input ?(msg="") ?(default="") () =
   match Js.Opt.to_option (window##prompt (_s msg, _s default)) with
-  None -> assert false
+    None -> assert false
   | Some s -> Js.to_string s
 
 let jsnew0 (constr : 'a Js.t Js.constr) () =
