@@ -12,5 +12,4 @@ ocp-jslib
     $ opam remote add devel git@github.com:OCamlPro/opam-repo-dev.git
     $ opam install js_of_ocaml
     $ opam install ocp-build
-    $ ./configure
     $ make
