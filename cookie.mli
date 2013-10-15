@@ -1,14 +1,13 @@
+type key
+type value
 
 (** Gets browser cookies and returns a [(key, value) list].  *)
-val get_cookie : unit -> (string * string) list
+val get_cookie : unit -> (key * value) list
 
 (** Sets browser cookies. Expiration time is one year by default. *)
-val set_cookie : string -> string -> unit
+val set_cookie : key -> value -> unit
 
 (** Sets browser cookies with expiration time. *)
-val set_cookie_with_timeout : string -> string -> Js.date Js.t -> unit
+val set_cookie_with_timeout : key -> value -> Js.date Js.t -> unit
 
-
-
-val initial_cookies : (string * string) list
-
+val initial_cookies : (key * value) list

@@ -19,7 +19,7 @@ val get_by_id : string -> string
 
 val get_by_name : string -> string
 
-val read_from_input : ?msg:string -> ?default:string -> string
+val read_from_input : ?msg:string -> ?default:string -> unit -> string
 
 (** {2 Constructors}  *)
 
