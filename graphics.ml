@@ -361,7 +361,7 @@ let wait_next_event elist =
   failwith "Graphics.wait_next_event cannot be implemented"
 
 
-let loop_on_exit elist f =
+let loop_at_exit elist f =
   let doc = Dom_html.document in
   let canvas = (get_state ()).canvas in
   let cx, cy = canvas##offsetLeft, canvas##offsetTop in
