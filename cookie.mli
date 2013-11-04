@@ -1,5 +1,5 @@
-type key
-type value
+type key = string
+type value = string
 
 (** Gets browser cookies and returns a [(key, value) list].  *)
 val get_cookie : unit -> (key * value) list
