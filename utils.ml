@@ -72,3 +72,14 @@ let setInterval f time =
 let setTimeout f time =
   let interval_id = window##setTimeout (_f f, time) in
   (fun _ -> window##clearTimeout (interval_id))
+
+let select (selection : string) =
+  doc##querySelector (_s selection)
+    
+let select_all (selection : string) =
+  doc##querySelectorAll (_s selection)
+
+let from_option opt =  
+  match Js.Opt.to_option opt with
+  | None ->  assert false
+  | Some t -> t
