@@ -42,3 +42,7 @@ val jsnew3 : ('a -> 'b -> 'c -> 'd Js.t) Js.constr -> 'a * 'b * 'c -> 'd Js.t
 val setIntervalUntilFalse : (unit -> bool) -> float -> unit
 val setInterval : (unit -> unit) -> float -> (unit -> unit)
 val setTimeout : (unit -> unit) -> float -> (unit -> unit)
+val select : string -> Dom_html.element Js.t Js.opt
+val select_all : string -> Dom_html.element Dom.nodeList Js.t
+
+val from_option : 'a Js.Opt.t -> 'a
