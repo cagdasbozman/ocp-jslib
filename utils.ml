@@ -73,10 +73,10 @@ let setTimeout f time =
   let interval_id = window##setTimeout (_f f, time) in
   (fun _ -> window##clearTimeout (interval_id))
 
-let select (selection : string) =
+let select selection =
   doc##querySelector (_s selection)
     
-let select_all (selection : string) =
+let select_all selection  =
   doc##querySelectorAll (_s selection)
 
 let from_option opt =  
