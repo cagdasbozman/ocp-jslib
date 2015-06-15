@@ -23,10 +23,16 @@ let get_by_id id =
   let div = get_element_by_id id in
   Js.to_string div##innerHTML
 
-let get_by_name id =
-  let div =
-    List.hd (Dom.list_of_nodeList (doc##getElementsByTagName (Js.string id))) in
-  Js.to_string div##innerHTML
+let get_element_by_tag_name tag =
+  match (Dom.list_of_nodeList (doc##getElementsByTagName (Js.string tag ))) with
+  | [] -> None
+  | s :: _ -> Some s
+
+let get_by_name tag = match get_element_by_tag_name tag with
+  | None -> None
+  | Some element -> begin match Js.Opt.to_option element##textContent with
+      | None -> None
+      | Some s -> Some (Js.to_string s) end
 
 let read_from_input ?(msg="") ?(default="") () =
   match Js.Opt.to_option (window##prompt (_s msg, _s default)) with

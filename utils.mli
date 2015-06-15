@@ -17,7 +17,7 @@ val get_element_by_id : string -> Dom_html.element Js.t
 
 val get_by_id : string -> string
 
-val get_by_name : string -> string
+val get_by_name : string -> string option
 
 val read_from_input : ?msg:string -> ?default:string -> unit -> string
 
